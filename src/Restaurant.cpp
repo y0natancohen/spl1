@@ -8,51 +8,52 @@
 
 using namespace Restaurant
 
-Restaurant{
+
+Restaurant::Restaurant(Restaurant &&res) {
 
 }
 
-Restaurant(const std::string &configFilePath) {
+Restaurant::Restaurant(const std::string &configFilePath) {
 
 }
 
-Restaurant(const Restaurant &res) {
+Restaurant::~Restaurant() {
 
 }
 
-~Restaurant() {
+Restaurant::Restaurant(const Restaurant &res) {
 
 }
 
-Restaurant &operator=(const Restaurant &res) {
-    return;
-}
-
-Restaurant(Restaurant &&res) {
+Restaurant::Restaurant() {
 
 }
 
-void start() {
+void Restaurant::start() {
 
 }
 
-int getNumOfTables() const {
+int Restaurant::getNumOfTables() const {
     return 0;
 }
 
-std::vector<Dish> &getMenu() {
+const std::vector<BaseAction *> &Restaurant::getActionsLog() const {
+    return <#initializer#>;
+}
+
+Table *Restaurant::getTable(int ind) {
     return nullptr;
 }
 
-Table *getTable(int ind) {
-    return nullptr;
+std::vector<Dish> &Restaurant::getMenu() {
+    return <#initializer#>;
 }
 
-const std::vector<BaseAction *> &getActionsLog() const {
-    return nullptr;
+Restaurant &Restaurant::operator=(const Restaurant &res) {
+    return <#initializer#>;
 }
 
-Restaurant &operator=(const Restaurant &&res) {
-    return nullptr;
+Restaurant &Restaurant::operator=(const Restaurant &&res) {
+    return <#initializer#>;
 }
 
