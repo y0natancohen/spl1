@@ -6,27 +6,33 @@
 
 
 
-using namespace Restaurant
-
-
-Restaurant::Restaurant(Restaurant &&res) {
+Restaurant::Restaurant::Restaurant(Restaurant &&res) {
 
 }
 
-Restaurant::Restaurant(const std::string &configFilePath) {
+Restaurant::Restaurant::Restaurant(const std::string &configFilePath) {
 
 }
 
-Restaurant::~Restaurant() {
+Restaurant::Restaurant::~Restaurant() {
 
 }
 
-Restaurant::Restaurant(const Restaurant &res) {
+Restaurant::Restaurant::Restaurant(const Restaurant &res) {
 
 }
 
-Restaurant::Restaurant() {
+Restaurant::Restaurant::Restaurant() {
 
+}
+
+
+Restaurant::Restaurant &Restaurant::operator=(const Restaurant &res) {
+    return *this;
+}
+
+Restaurant::Restaurant &Restaurant::operator=(const Restaurant &&res) {
+    return *this;
 }
 
 void Restaurant::start() {
@@ -34,26 +40,19 @@ void Restaurant::start() {
 }
 
 int Restaurant::getNumOfTables() const {
-    return 0;
+    return tables.size();
 }
 
 const std::vector<BaseAction *> &Restaurant::getActionsLog() const {
-    return <#initializer#>;
+    return actionsLog;
 }
 
 Table *Restaurant::getTable(int ind) {
-    return nullptr;
+    return tables[ind];
 }
 
 std::vector<Dish> &Restaurant::getMenu() {
-    return <#initializer#>;
+    return menu;
 }
 
-Restaurant &Restaurant::operator=(const Restaurant &res) {
-    return <#initializer#>;
-}
-
-Restaurant &Restaurant::operator=(const Restaurant &&res) {
-    return <#initializer#>;
-}
 
