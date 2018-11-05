@@ -12,9 +12,7 @@ int Customer::getId() const {
     return 0;
 }
 
-Customer::Customer(std::string c_name, int c_id) {
-
-}
+Customer::Customer(std::string c_name, int c_id): name(c_name), id(c_id) {}
 
 VegetarianCustomer::VegetarianCustomer(std::string name, int id) : Customer(name, id) {
 

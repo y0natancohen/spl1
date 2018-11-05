@@ -15,23 +15,43 @@ Restaurant::Restaurant(const std::string &configFilePath) {
 }
 
 Restaurant::~Restaurant() {
-
+    clear();
 }
 
 Restaurant &Restaurant::operator=(const Restaurant &res) {
-    return <#initializer#>;
+    return copy(res);
+}
+
+Restaurant &Restaurant::copy(const Restaurant &res) {
+    if (this == &res) {
+        return *this;
+    }
+
+    clear()
+
+    open = res.isOpen();
+    for (int i = 0; i < ; ++i) {
+        tables.push_back(*res.getTables()[i].copy() )
+    }
+
+    menu = getMenu();
+    actionsLog = getActionsLog();
+
+
+    return *this;
 }
 
 Restaurant::Restaurant(Restaurant &&res) {
 
+
 }
 
 Restaurant &Restaurant::operator=(const Restaurant &&res) {
-    return <#initializer#>;
+    return copy(res);
 }
 
 Restaurant::Restaurant(const Restaurant &res) {
-
+    return copy(res);
 }
 
 void Restaurant::start() {
@@ -59,9 +79,16 @@ bool Restaurant::isOpen() const {
 }
 
 void Restaurant::clear() {
+
     delete actionsLog;
     delete menu;
     delete tables;
+    delete open;
 
 }
+
+std::vector<Table *> Restaurant::getTables() {
+    return tables;
+}
+
 

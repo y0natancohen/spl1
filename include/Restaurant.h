@@ -20,12 +20,15 @@ public:
     Restaurant& operator=(const Restaurant&& res);
 
     void clear();
+    Restaurant* copy();
     void start();
     int getNumOfTables() const;
     Table* getTable(int ind);
+    std::vector<Table*> getTables();
 	const std::vector<BaseAction*>& getActionsLog() const; // Return a reference to the history of actions
     std::vector<Dish>& getMenu();
     bool isOpen() const;
+
 
 
 private:
@@ -34,6 +37,7 @@ private:
     std::vector<Dish> menu;
     std::vector<BaseAction*> actionsLog;
 
+    Restaurant &copy(const Restaurant &res);
 };
 
 
