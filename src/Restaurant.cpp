@@ -6,33 +6,32 @@
 
 
 
-Restaurant::Restaurant::Restaurant(Restaurant &&res) {
+Restaurant::Restaurant() {
 
 }
 
-Restaurant::Restaurant::Restaurant(const std::string &configFilePath) {
+Restaurant::Restaurant(const std::string &configFilePath) {
 
 }
 
-Restaurant::Restaurant::~Restaurant() {
+Restaurant::~Restaurant() {
 
 }
 
-Restaurant::Restaurant::Restaurant(const Restaurant &res) {
+Restaurant &Restaurant::operator=(const Restaurant &res) {
+    return <#initializer#>;
+}
+
+Restaurant::Restaurant(Restaurant &&res) {
 
 }
 
-Restaurant::Restaurant::Restaurant() {
-
+Restaurant &Restaurant::operator=(const Restaurant &&res) {
+    return <#initializer#>;
 }
 
+Restaurant::Restaurant(const Restaurant &res) {
 
-Restaurant::Restaurant &Restaurant::operator=(const Restaurant &res) {
-    return *this;
-}
-
-Restaurant::Restaurant &Restaurant::operator=(const Restaurant &&res) {
-    return *this;
 }
 
 void Restaurant::start() {
@@ -43,16 +42,26 @@ int Restaurant::getNumOfTables() const {
     return tables.size();
 }
 
-const std::vector<BaseAction *> &Restaurant::getActionsLog() const {
-    return actionsLog;
+Table *Restaurant::getTable(int ind) {
+    return nullptr;
 }
 
-Table *Restaurant::getTable(int ind) {
-    return tables[ind];
+const std::vector<BaseAction *> &Restaurant::getActionsLog() const {
+    return actionsLog;
 }
 
 std::vector<Dish> &Restaurant::getMenu() {
     return menu;
 }
 
+bool Restaurant::isOpen() const {
+    return open;
+}
+
+void Restaurant::clear() {
+    delete actionsLog;
+    delete menu;
+    delete tables;
+
+}
 
