@@ -5,22 +5,25 @@
 #include "../include/Dish.h"
 
 Dish::Dish(int d_id, std::string d_name, int d_price, DishType d_type) {
-
+    id = d_id;
+    name = d_name;
+    price = d_price;
+    type = d_type;
 }
 
 int Dish::getId() const {
-    return 0;
+    return id;
 }
 
 std::string Dish::getName() const {
-    return std::__cxx11::string();
+    return name;
 }
 
 int Dish::getPrice() const {
-    return 0;
+    return price;
 }
 
 DishType Dish::getType() const {
-    return BVG;
+    return type;
 }
 

@@ -6,11 +6,11 @@
 using namespace std;
 
 Table::Table(int t_capacity) {
-
+    capacity = t_capacity;
 }
 
 int Table::getCapacity() const {
-    return 0;
+    return capacity;
 }
 
 void Table::addCustomer(Customer *customer) {
@@ -22,7 +22,7 @@ void Table::removeCustomer(int id) {
 }
 
 Customer *Table::getCustomer(int id) {
-    return nullptr;
+    return customersList[id];
 }
 
 vector<Customer*> &Table::getCustomers() {
@@ -50,6 +50,6 @@ int Table::getBill() {
 }
 
 bool Table::isOpen() {
-    return false;
+    return open;
 }
 
