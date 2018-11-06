@@ -12,6 +12,7 @@ int Customer::getId() const {
     return id;
 }
 
+
 Customer::Customer(std::string c_name, int c_id):
                     name(c_name), id(c_id) {}
 
@@ -25,8 +26,7 @@ int Customer::getCorrectId(
     if (menu.size() > 0){
 
         std::vector<Dish> dishes;
-        for (int i = 0; i < ; ++i) {
-            Dish d = menu[i];
+        for (auto d : menu) {
             if (noType){
                 dishes.push_back(new_d);
             }else{
@@ -64,6 +64,15 @@ int Customer::getCorrectId(
     }
 }
 
+Customer::Customer(const Customer &customer) {
+    name = customer.getName();
+    id = customer.getId();
+}
+
+int Customer::getId() {
+    return id;
+}
+
 
 VegetarianCustomer::VegetarianCustomer(std::string name, int id) : Customer(name, id) {
 
@@ -89,6 +98,11 @@ std::string VegetarianCustomer::toString() const {
     return name;
 }
 
+VegetarianCustomer::VegetarianCustomer(const VegetarianCustomer &vegetarianCustomer) {
+    name = vegetarianCustomer.getName();
+    id = vegetarianCustomer.getId();
+}
+
 CheapCustomer::CheapCustomer(std::string name, int id) : Customer(name, id) {
 }
 
@@ -105,6 +119,11 @@ std::vector<int> CheapCustomer::order(const std::vector<Dish> &menu) {
 
 std::string CheapCustomer::toString() const {
     return name;
+}
+
+CheapCustomer::CheapCustomer(const CheapCustomer &cheapCustomer) {
+    name = cheapCustomer.getName();
+    id = cheapCustomer.getId();
 }
 
 bool SpicyCustomer::hasOrdered() {
@@ -142,6 +161,12 @@ std::string SpicyCustomer::toString() const {
     return name;
 }
 
+SpicyCustomer::SpicyCustomer(const SpicyCustomer &spicyCustomer) {
+    name = spicyCustomer.getName();
+    id = spicyCustomer.getId();
+    ordered = spicyCustomer.hasOrdered();
+}
+
 AlchoholicCustomer::AlchoholicCustomer(std::string name, int id) : Customer(name, id) {
     drinksHad = 0;
 }
@@ -169,4 +194,10 @@ int AlchoholicCustomer::getDrinksHad() {
 void AlchoholicCustomer::increaseDrinksHad() {
     ++drinksHad;
 
+}
+
+AlchoholicCustomer::AlchoholicCustomer(const AlchoholicCustomer &alchoholicCustomer) {
+    name = alchoholicCustomer.getName();
+    id = alchoholicCustomer.getId();
+    drinksHad = alchoholicCustomer.getDrinksHad();
 }

@@ -5,8 +5,13 @@
 #include "../include/Table.h"
 using namespace std;
 
-Table::Table(int t_capacity) {
-    capacity = t_capacity;
+Table::Table(int t_capacity):
+        capacity(t_capacity) {
+    open = true;
+}
+
+Table::Table(const Table& other){
+    copy(other);
 }
 
 int Table::getCapacity() const {
@@ -22,6 +27,7 @@ void Table::removeCustomer(int id) {
 }
 
 Customer *Table::getCustomer(int id) {
+    // TODO: change this to actually find by id
     return customersList[id];
 }
 
@@ -49,7 +55,22 @@ int Table::getBill() {
     return 0;
 }
 
-bool Table::isOpen() {
+bool Table::isOpen() const {
     return open;
+}
+
+void Table::copy(const Table &other) {
+    capacity = other.getCapacity();
+    open = other.isOpen();
+
+    for (auto customer : other.getCustomers()){
+        customersList.push_back(customer);
+        // IMPORTANT: here we copy only addresses,
+        // because of the different types of customer
+    }
+
+    for (auto orderPair: other.getOrders()){
+        orderList.push_back(OrderPair(orderPair))
+    }
 }
 

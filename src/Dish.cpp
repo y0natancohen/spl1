@@ -24,6 +24,9 @@ DishType Dish::getType() const {
 }
 
 Dish::Dish(Dish &dish):
-            id(dish.getId()), name(dish.getName()),
-            price(dish.getPrice()), type(dish.getType()) {}
+            id(dish.getId()),
+            name(dish.getName()),
+            price(dish.getPrice()),
+            type(dish.getType())
+            {}
 

@@ -15,44 +15,48 @@ Restaurant::Restaurant(const std::string &configFilePath) {
 }
 
 Restaurant::~Restaurant() {
-    clear();
+    clearTables();
 }
 
-Restaurant &Restaurant::operator=(const Restaurant &res) {
-    return copy(res);
-}
+Restaurant::Restaurant(const Restaurant& other) {
+//    if (this == &other) {
+//        return *this;
+//    }
 
-Restaurant &Restaurant::copy(const Restaurant &res) {
-    if (this == &res) {
-        return *this;
-    }
+    clearTables();
 
-    clear()
-
-    open = res.isOpen();
-    for (int i = 0; i < ; ++i) {
-        tables.push_back(*res.getTables()[i].copy() )
+    open = other.isOpen();
+    for (auto table : other.getTables()) {
+        //TODO: WTFFFFFFF
+        int *new_t = new Table(table);
+        tables.push_back(*new_t)
     }
 
     menu = getMenu();
     actionsLog = getActionsLog();
 
 
-    return *this;
+//    return *this;
 }
 
-Restaurant::Restaurant(Restaurant &&res) {
+//Restaurant &Restaurant::operator=(const Restaurant &res) {
+//    return copy(res);
+//}
 
 
-}
 
-Restaurant &Restaurant::operator=(const Restaurant &&res) {
-    return copy(res);
-}
+//Restaurant::Restaurant(Restaurant &&res) {
+//
+//
+//}
 
-Restaurant::Restaurant(const Restaurant &res) {
-    return copy(res);
-}
+//Restaurant &Restaurant::operator=(const Restaurant &&res) {
+//    return copy(res);
+//}
+
+//Restaurant::Restaurant(const Restaurant &res) {
+//    return copy(res);
+//}
 
 void Restaurant::start() {
 
@@ -78,16 +82,15 @@ bool Restaurant::isOpen() const {
     return open;
 }
 
-void Restaurant::clear() {
-
-    delete actionsLog;
-    delete menu;
-    delete tables;
-    delete open;
+void Restaurant::clearTables() {
+    for (auto table : tables) {
+        delete table;
+        // TODO: null here??
+    }
 
 }
 
-std::vector<Table *> Restaurant::getTables() {
+std::vector<Table *> Restaurant::getTables() const {
     return tables;
 }
 
