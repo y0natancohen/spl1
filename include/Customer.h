@@ -11,9 +11,16 @@ public:
     virtual std::vector<int> order(const std::vector<Dish> &menu)=0;
     virtual std::string toString() const = 0;
     std::string getName() const;
-    int getId() const;
 
-private:
+    int getCorrectId(
+            const std::vector<Dish> &menu,
+            const DishType type,
+            int location,
+            bool sortById,
+            bool noType);
+
+
+        private:
     const std::string name;
     const int id;
 };
@@ -33,6 +40,7 @@ public:
 	CheapCustomer(std::string name, int id);
     std::vector<int> order(const std::vector<Dish> &menu);
     std::string toString() const;
+
 private:
 };
 
@@ -42,7 +50,10 @@ public:
 	SpicyCustomer(std::string name, int id);
     std::vector<int> order(const std::vector<Dish> &menu);
     std::string toString() const;
+    bool hasOrdered();
+    void setOrdered(bool newState);
 private:
+    bool ordered;
 };
 
 
@@ -51,7 +62,10 @@ public:
 	AlchoholicCustomer(std::string name, int id);
     std::vector<int> order(const std::vector<Dish> &menu);
     std::string toString() const;
+    int getDrinksHad();
+    void increaseDrinksHad();
 private:
+    int drinksHad;
 };
 
 

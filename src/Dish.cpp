@@ -23,3 +23,7 @@ DishType Dish::getType() const {
     return type;
 }
 
+Dish::Dish(Dish &dish):
+            id(dish.getId()), name(dish.getName()),
+            price(dish.getPrice()), type(dish.getType()) {}
+
