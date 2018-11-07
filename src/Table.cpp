@@ -16,10 +16,10 @@ Table::Table(const Table& other){
 
     // need to think if this is bad
     for (auto int_dish : other.orderList){
-        orderList.push_back(int_dish)
+        orderList.push_back(int_dish);
     }
     for (auto customer : other.customersList){
-        customersList.push_back(customer)
+        customersList.push_back(customer);
     }
     //
 

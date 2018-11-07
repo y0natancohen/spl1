@@ -13,7 +13,7 @@ public:
 	Restaurant();
 
     Restaurant(const std::string &configFilePath);
-    Restaurant(const Restaurant &other);
+//    Restaurant(const Restaurant &other);
     virtual ~Restaurant();
 //    Restaurant& operator=(const Restaurant& res);
 //    Restaurant (Restaurant&& res);

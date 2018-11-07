@@ -11,13 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fb80762e-5bb8-4dbf-a381-ef0e16b3a6f9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Table.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Table.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Customer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Customer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Restaurant.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Restaurant.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Table.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Table.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="fb80762e-5bb8-4dbf-a381-ef0e16b3a6f9" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <ignored path="/bin/" />
     <ignored path="/cmake-build-debug/" />
@@ -59,13 +53,13 @@
           <entry key="cpp" value="3421" />
           <entry key="dummy" value="2" />
           <entry key="h" value="667" />
-          <entry key="txt" value="98" />
+          <entry key="txt" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="ObjectiveC" value="4088" />
-          <entry key="PLAIN_TEXT" value="100" />
+          <entry key="PLAIN_TEXT" value="112" />
         </counts>
       </usages-collector>
     </session>
@@ -120,7 +114,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/include/Table.h">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="93">
+                <state relative-caret-position="177">
                   <caret line="32" column="25" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="25" />
                   <folding>
                     <element signature="e#35#52#0" expanded="true" />
@@ -353,7 +347,7 @@
       <workItem from="1541436184323" duration="13627000" />
       <workItem from="1541517513426" duration="19024000" />
       <workItem from="1541581011036" duration="2840000" />
-      <workItem from="1541614087200" duration="971000" />
+      <workItem from="1541614087200" duration="1222000" />
     </task>
     <task id="LOCAL-00001" summary="asd">
       <created>1541446003154</created>
@@ -397,24 +391,30 @@
       <option name="project" value="LOCAL" />
       <updated>1541584187298</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="little things to compile">
+      <created>1541615076924</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1541615076924</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36462000" />
+    <option name="totallyTimeSpent" value="36713000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1368" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.11439394" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.329582" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" visible="true" weight="0.4903537" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="3" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Messages" order="4" visible="true" weight="0.46463022" />
+      <window_info anchor="bottom" id="Messages" order="4" weight="0.46463022" />
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="Find" order="6" weight="0.329582" />
       <window_info anchor="bottom" id="Run" order="7" />
@@ -462,7 +462,8 @@
     <MESSAGE value="finished (i think) customer.cpp" />
     <MESSAGE value="solving compiler problems" />
     <MESSAGE value="little things" />
-    <option name="LAST_COMMIT_MESSAGE" value="little things" />
+    <MESSAGE value="little things to compile" />
+    <option name="LAST_COMMIT_MESSAGE" value="little things to compile" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
@@ -592,7 +593,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/include/Table.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
+        <state relative-caret-position="177">
           <caret line="32" column="25" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="25" />
           <folding>
             <element signature="e#35#52#0" expanded="true" />

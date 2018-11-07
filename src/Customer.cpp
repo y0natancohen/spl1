@@ -28,6 +28,7 @@ int Customer::getCorrectId(
         std::vector<Dish> dishes;
 
         for (auto d : menu) {
+            Dish new_d = Dish(&d);
             if (noType){
                 dishes.push_back(new_d);
             }else{
