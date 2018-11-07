@@ -31,8 +31,8 @@ Dish::Dish(const Dish &dish):
             {}
 
 Dish::Dish(const Dish *dish):
-        id(dish.getId()),
-        name(dish.getName()),
-        price(dish.getPrice()),
-        type(dish.getType()) {}
+        id(dish->getId()),
+        name(dish->getName()),
+        price(dish->getPrice()),
+        type(dish->getType()) {}
 

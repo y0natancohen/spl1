@@ -33,7 +33,6 @@ int Customer::getCorrectId(
                 dishes.push_back(new_d);
             }else{
                 if (d.getType() == type){
-                    new_d = Dish(d);
                     dishes.push_back(new_d);
                 }
             }
@@ -44,21 +43,21 @@ int Customer::getCorrectId(
 
             if (sortById){
                 std::sort(dishes.begin(), dishes.end(),
-                [ ]( const Dish& l, const Dish& r ){return l.getId() < r.getId(); })
+                [ ]( const Dish& l, const Dish& r ){return l.getId() < r.getId(); });
 
             }else{
                 std::sort(dishes.begin(), dishes.end(),
-                          [ ]( const Dish& l, const Dish& r ){return l.getPrice() < r.getPrice(); })
+                          [ ]( const Dish& l, const Dish& r ){return l.getPrice() < r.getPrice(); });
 
             }
             // sorted
             if (location == -1 ){ // last
-                return dishes[dishes.size() - 1]
+                return dishes[dishes.size() - 1].getId();
             }else {
-                return dishes[location]
+                return dishes[location].getId();
             }
         }else{
-            return -1
+            return -1;
         }
 
     } else {
@@ -66,14 +65,13 @@ int Customer::getCorrectId(
     }
 }
 
-Customer::Customer(const Customer &customer) {
-    name = customer.getName();
-    id = customer.getId();
-}
+Customer::Customer(const Customer &customer):
+    name(customer.getName()),
+    id(customer.getId()) {}
 
-int Customer::getId() {
-    return id;
-}
+//int Customer::getId() {
+//    return id;
+//}
 
 
 VegetarianCustomer::VegetarianCustomer(std::string name, int id) : Customer(name, id) {
@@ -97,13 +95,13 @@ std::vector<int> VegetarianCustomer::order(const std::vector<Dish> &menu) {
 }
 
 std::string VegetarianCustomer::toString() const {
-    return name;
+    return getName();
 }
 
-VegetarianCustomer::VegetarianCustomer(const VegetarianCustomer &vegetarianCustomer) {
-    name = vegetarianCustomer.getName();
-    id = vegetarianCustomer.getId();
-}
+//VegetarianCustomer::VegetarianCustomer(const VegetarianCustomer &vegetarianCustomer) {
+//    name = vegetarianCustomer.getName();
+//    id = vegetarianCustomer.getId();
+//}
 
 CheapCustomer::CheapCustomer(std::string name, int id) : Customer(name, id) {
 }
@@ -120,13 +118,13 @@ std::vector<int> CheapCustomer::order(const std::vector<Dish> &menu) {
 }
 
 std::string CheapCustomer::toString() const {
-    return name;
+    return getName();
 }
 
-CheapCustomer::CheapCustomer(const CheapCustomer &cheapCustomer) {
-    name = cheapCustomer.getName();
-    id = cheapCustomer.getId();
-}
+//CheapCustomer::CheapCustomer(const CheapCustomer &cheapCustomer) {
+//    name = cheapCustomer.getName();
+//    id = cheapCustomer.getId();
+//}
 
 bool SpicyCustomer::hasOrdered() {
     return ordered;
@@ -160,14 +158,14 @@ std::vector<int> SpicyCustomer::order(const std::vector<Dish> &menu) {
 }
 
 std::string SpicyCustomer::toString() const {
-    return name;
+    return getName();
 }
 
-SpicyCustomer::SpicyCustomer(const SpicyCustomer &spicyCustomer) {
-    name = spicyCustomer.getName();
-    id = spicyCustomer.getId();
-    ordered = spicyCustomer.hasOrdered();
-}
+//SpicyCustomer::SpicyCustomer(const SpicyCustomer &spicyCustomer) {
+//    name = spicyCustomer.getName();
+//    id = spicyCustomer.getId();
+//    ordered = spicyCustomer.hasOrdered();
+//}
 
 AlchoholicCustomer::AlchoholicCustomer(std::string name, int id) : Customer(name, id) {
     drinksHad = 0;
@@ -186,7 +184,7 @@ std::vector<int> AlchoholicCustomer::order(const std::vector<Dish> &menu) {
 }
 
 std::string AlchoholicCustomer::toString() const {
-    return name;
+    return getName();
 }
 
 int AlchoholicCustomer::getDrinksHad() {
@@ -198,8 +196,8 @@ void AlchoholicCustomer::increaseDrinksHad() {
 
 }
 
-AlchoholicCustomer::AlchoholicCustomer(const AlchoholicCustomer &alchoholicCustomer) {
-    name = alchoholicCustomer.getName();
-    id = alchoholicCustomer.getId();
-    drinksHad = alchoholicCustomer.getDrinksHad();
-}
+//AlchoholicCustomer::AlchoholicCustomer(const AlchoholicCustomer &alchoholicCustomer) {
+//    name = alchoholicCustomer.getName();
+//    id = alchoholicCustomer.getId();
+//    drinksHad = alchoholicCustomer.getDrinksHad();
+//}

@@ -31,7 +31,7 @@ public:
 class VegetarianCustomer : public Customer {
 public:
 	VegetarianCustomer(std::string name, int id);
-    VegetarianCustomer(const VegetarianCustomer& vegetarianCustomer);
+//    VegetarianCustomer(const VegetarianCustomer& vegetarianCustomer);
 
     std::vector<int> order(const std::vector<Dish> &menu);
     std::string toString() const;
@@ -42,7 +42,7 @@ private:
 class CheapCustomer : public Customer {
 public:
 	CheapCustomer(std::string name, int id);
-    CheapCustomer(const CheapCustomer& cheapCustomer);
+//    CheapCustomer(const CheapCustomer& cheapCustomer);
     std::vector<int> order(const std::vector<Dish> &menu);
     std::string toString() const;
 
@@ -53,7 +53,7 @@ private:
 class SpicyCustomer : public Customer {
 public:
 	SpicyCustomer(std::string name, int id);
-    SpicyCustomer(const SpicyCustomer& spicyCustomer);
+//    SpicyCustomer(const SpicyCustomer& spicyCustomer);
     std::vector<int> order(const std::vector<Dish> &menu);
     std::string toString() const;
     bool hasOrdered();
@@ -66,7 +66,7 @@ private:
 class AlchoholicCustomer : public Customer {
 public:
 	AlchoholicCustomer(std::string name, int id);
-    AlchoholicCustomer(const AlchoholicCustomer& alchoholicCustomer);
+//    AlchoholicCustomer(const AlchoholicCustomer& alchoholicCustomer);
     std::vector<int> order(const std::vector<Dish> &menu);
     std::string toString() const;
     int getDrinksHad();
