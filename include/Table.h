@@ -16,14 +16,14 @@ public:
     void addCustomer(Customer* customer);
     void removeCustomer(int id);
     Customer* getCustomer(int id);
-    std::vector<Customer*>& getCustomers();
-    std::vector<OrderPair>& getOrders();
+//    std::vector<Customer*>& getCustomers();
+//    std::vector<OrderPair>& getOrders();
     void order(const std::vector<Dish> &menu);
     void openTable();
     void closeTable();
     int getBill();
     bool isOpen() const;
-    void copy( Table& other);
+//    void copy( Table& other);
 
 
 private:

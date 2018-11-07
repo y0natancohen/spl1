@@ -18,26 +18,28 @@ Restaurant::~Restaurant() {
     clearTables();
 }
 
-Restaurant::Restaurant(const Restaurant& other) {
-//    if (this == &other) {
-//        return *this;
+// I think we are creating
+//  only one restaurnt
+//Restaurant::Restaurant(const Restaurant& other) {
+////    if (this == &other) {
+////        return *this;
+////    }
+//
+//    clearTables();
+//
+//    open = other.isOpen();
+//    for (auto table : other.getTables()) {
+//        //TODO: WTFFFFFFF
+//        Table *new_t = new Table(*table);
+//        tables.push_back(*new_t)
 //    }
-
-    clearTables();
-
-    open = other.isOpen();
-    for (auto table : other.getTables()) {
-        //TODO: WTFFFFFFF
-        Table *new_t = new Table(*table);
-        tables.push_back(*new_t)
-    }
-
-    menu = getMenu();
-    actionsLog = getActionsLog();
-
-
-//    return *this;
-}
+//
+//    menu = getMenu();
+//    actionsLog = getActionsLog();
+//
+//
+////    return *this;
+//}
 
 //Restaurant &Restaurant::operator=(const Restaurant &res) {
 //    return copy(res);
@@ -69,10 +71,10 @@ int Restaurant::getNumOfTables() const {
 Table *Restaurant::getTable(int ind) {
     return nullptr;
 }
-
-const std::vector<BaseAction *> &Restaurant::getActionsLog() const {
-    return actionsLog;
-}
+// problem - this is giving edit privleges
+//const std::vector<BaseAction *> &Restaurant::getActionsLog() const {
+//    return actionsLog;
+//}
 
 std::vector<Dish> &Restaurant::getMenu() {
     return menu;
@@ -90,8 +92,9 @@ void Restaurant::clearTables() {
 
 }
 
-std::vector<Table *> Restaurant::getTables() const {
-    return tables;
-}
+// problem - this is giving edit privleges
+//std::vector<Table *> Restaurant::getTables() const {
+//    return tables;
+//}
 
 
