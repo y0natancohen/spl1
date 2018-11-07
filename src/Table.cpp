@@ -23,6 +23,12 @@ void Table::addCustomer(Customer *customer) {
 }
 
 void Table::removeCustomer(int id) {
+    Customer c1;
+    for (auto c : customersList){
+        if id{
+            c1 =
+        }
+    }
 
 }
 
@@ -59,7 +65,7 @@ bool Table::isOpen() const {
     return open;
 }
 
-void Table::copy(const Table &other) {
+void Table::copy( Table &other) {
     capacity = other.getCapacity();
     open = other.isOpen();
 

@@ -11,7 +11,7 @@ typedef std::pair<int, Dish> OrderPair;
 class Table{
 public:
     Table(int t_capacity);
-    Table(const Table& other);
+    Table(const Table &other);
     int getCapacity() const;
     void addCustomer(Customer* customer);
     void removeCustomer(int id);
@@ -23,7 +23,7 @@ public:
     void closeTable();
     int getBill();
     bool isOpen() const;
-    void copy(const Table& other);
+    void copy( Table& other);
 
 
 private:

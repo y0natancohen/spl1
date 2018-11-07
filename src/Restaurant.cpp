@@ -28,7 +28,7 @@ Restaurant::Restaurant(const Restaurant& other) {
     open = other.isOpen();
     for (auto table : other.getTables()) {
         //TODO: WTFFFFFFF
-        int *new_t = new Table(table);
+        Table *new_t = new Table(*table);
         tables.push_back(*new_t)
     }
 
